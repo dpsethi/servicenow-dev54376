@@ -23,17 +23,17 @@ def randomString(stringLength=10):
     return ''.join(random.choice(letters) for i in range(stringLength))
 
 r = randomString()
-print r
+print(r)
 
 def randomNumber(stringLength=10):
     letters = string.digits
     return ''.join(random.choice(letters) for i in range(stringLength))
 n = randomNumber()
-print n
+print(n)
 
 a=r+n
 
-print a
+print(a)
 
 
 headers = {
@@ -44,6 +44,6 @@ data={"u_name":r,"u_serial_number":n,"u_asset_tag":a,"u_is_virtual":"true","u_mo
 
 response = requests.post('https://dev54376.service-now.com/api/now/import/u_td_cloud_test', headers=headers, json=data, auth=('ws.dps', 'abcd1234'))
 
-print response
-print response.text
+print(response)
+print(response.text)
 
